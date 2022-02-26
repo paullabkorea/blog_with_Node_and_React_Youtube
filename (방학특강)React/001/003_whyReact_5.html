@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+    <style>
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        li {
+            margin: 15px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+            transition: .3s;
+            width: 400px;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            width: 400px;
+            height: 200px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .contents {
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        function Card(props) {
+            return (
+                <li>
+                    <img src="../asset/1.jpg" alt="제주도여행지1"/>
+                    <div class="contents">
+                        <h4>제주도여행지 - 하나</h4> 
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, exercitationem ut incidunt totam perspiciatis, voluptas nemo adipisci voluptate labore fugit quia repudiandae sint dolor maiores eveniet, consectetur saepe temporibus. Nam?</p> 
+                    </div>
+                </li>
+            );
+        }
+        
+        const app = (
+            <div class="container">
+                <ul>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                </ul>
+            </div>
+        );
+
+        // DOM에 리액트 컴포넌트 랜더링하기
+        const domContainer = document.querySelector('#root');
+        ReactDOM.render(app, domContainer);
+    </script>
+</body>
+</html>
